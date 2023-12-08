@@ -28,4 +28,5 @@ void test03()//二分查找
 	scanf("%d", &target);
 	int len = sizeof(arr) / sizeof(arr[0]);
 	printf("%d",Search(arr, 0, len, target));//元素位置，或待插入位置
+
 }
