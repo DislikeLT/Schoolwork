@@ -21,7 +21,7 @@
     <ClCompile Include="Divide And Rule.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="master.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
