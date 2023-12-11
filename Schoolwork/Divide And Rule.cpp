@@ -7,6 +7,18 @@
 
 //分治
 
+
+
+void test03()//二分查找
+{
+	int arr[] = { 1,4,6,8,12,17,19,24,29 };//有序
+	int target;
+	printf("查找元素：");
+	scanf("%d", &target);
+	int len = sizeof(arr) / sizeof(arr[0]);
+	printf("%d",Search(arr, 0, len, target));//元素位置或待插入位置
+}
+
 int Search(int arr[], int L, int R, int target)
 {
 	if (L > R)
@@ -20,12 +32,35 @@ int Search(int arr[], int L, int R, int target)
 		return mid;
 }
 
-void test03()//二分查找
+
+void test04()//快速排序
 {
-	int arr[] = { 1,4,6,8,12,17,19,24,29 };//有序
-	int target;
-	printf("查找元素：");
-	scanf("%d", &target);
+	int arr[] = { 2,13,5,24,45,20,33,6 };
 	int len = sizeof(arr) / sizeof(arr[0]);
-	printf("%d",Search(arr, 0, len, target));//元素位置，或待插入位置
+	QuickSort(arr, 0, len - 1);
 }
+
+void QuickSort(int* arr, int left, int right)
+{
+	if (left >= right)
+		return;
+	int mid = left + (right - left) / 2;
+	int L = right;
+	int R = mid + 1;
+	int sum = arr[L];
+	while (L < R)
+	{
+		while (L<R && arr[R]>sum)
+			R--;
+		arr[L] = arr[R];
+		while (L < R && arr[L] < sum)
+			L--;
+		arr[R] = arr[L];
+	}
+	arr[L] = sum;
+	QuickSort(arr, left, mid-1);
+	QuickSort(arr, mid + 1, right);
+	return;
+}
+
+
