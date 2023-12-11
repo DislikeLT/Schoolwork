@@ -24,10 +24,13 @@
     <ClCompile Include="master.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Greed.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Function Definition.h">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

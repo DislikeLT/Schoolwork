@@ -2,11 +2,18 @@
 
 //º¯Êı¶¨Òå
 
+typedef struct
+{
+	int weight;
+	int value;
+}Items;
+
 
 extern void test01();
 extern void test02();
 extern void test03();
 extern void test04();
+extern void test05();
 
 extern int Search(int arr[], int L, int R, int target);
 
