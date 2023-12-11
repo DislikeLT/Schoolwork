@@ -8,7 +8,7 @@
 //分治
 
 
-int Search(int arr[], int L, int R, int target)
+int Search(int arr[], int L, int R, int target)//二分查找
 {
 	if (L > R)
 		return L;
@@ -21,7 +21,7 @@ int Search(int arr[], int L, int R, int target)
 		return mid;
 }
 
-void test03()//二分查找
+void test03()
 {
 	int arr[] = { 1,4,6,8,12,17,19,24,29 };//有序
 	int target;
@@ -32,7 +32,7 @@ void test03()//二分查找
 }
 
 
-void QuickSort(int* arr, int left, int right)
+void QuickSort(int* arr, int left, int right)//快速排序
 {
 	if (left >= right)
 		return;
@@ -54,7 +54,7 @@ void QuickSort(int* arr, int left, int right)
 	return;
 }
 
-void test04()//快速排序
+void test04()
 {
 	int arr[] = { 2,13,5,24,45,20,33,6 };
 	int len = sizeof(arr) / sizeof(arr[0]);

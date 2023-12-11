@@ -14,6 +14,8 @@ extern void test02();
 extern void test03();
 extern void test04();
 extern void test05();
+extern void test06();
+extern void test07();
 
 extern int Search(int arr[], int L, int R, int target);
 

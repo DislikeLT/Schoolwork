@@ -5,8 +5,23 @@
 #include<string.h>
 #include<math.h>
 #include "Function Definition.h"
+#include<setjmp.h>
+#include <cassert>
 
+int Allocation_handled = 0;
+jmp_buf Allocate_Failed;
+
+void* allocate(unsigned n)
+{
+	void* brr = malloc(n);
+	if (!brr)
+		return brr;
+	if (Allocation_handled)
+		longjmp(Allocate_Failed, 1);
+	assert(0);
+}
 int main()
 {
-	test05();
+	void* arr;
+	arr = allocate(10);
 }

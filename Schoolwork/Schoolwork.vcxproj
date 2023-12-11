@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Divide And Rule.cpp" />
+    <ClCompile Include="Dynamic Planning.cpp" />
     <ClCompile Include="Greed.cpp" />
     <ClCompile Include="Recursioncpp.cpp" />
     <ClCompile Include="master.cpp" />

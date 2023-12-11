@@ -8,7 +8,7 @@
 //递归
 
 
-bool Judge(int num)
+bool Judge(int num)//判断某数是否为2的幂次方
 {
 	if (num == 1)
 		return true;
@@ -19,7 +19,7 @@ bool Judge(int num)
 	Judge(num);
 }
 
-void test01()//判断某数是否为2的幂次方
+void test01()
 {
 	printf("请输入判断数字：");
 	int num;
@@ -35,7 +35,7 @@ void test01()//判断某数是否为2的幂次方
 		printf("NO");
 }
 
-void Reversal(char* arr, int L, int len)
+void Reversal(char* arr, int L, int len)//反转字符串
 {
 	if (L >= (len / 2))
 		return;
@@ -45,7 +45,7 @@ void Reversal(char* arr, int L, int len)
 	Reversal(arr, ++L, len);
 }
 
-void test02()//反转字符串
+void test02()
 {
 	char arr[] = "asdfg1234";
 	int len = strlen(arr);
