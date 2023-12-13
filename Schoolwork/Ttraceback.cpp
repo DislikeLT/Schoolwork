@@ -50,26 +50,3 @@ void bag(int i)
 	r += p[i];
 }
 
-void test09()
-{
-	for (int i = 0; i < n; i++)
-		r += w[i];
-	bag(1);
-	printf("%d\n", MAX_p);
-}
-
-void tsp(int i)
-{
-	if (i > n)
-	{
-		int t = citycode(now[n]);
-		nowd += d[t][1];
-		if (nowd < mind)
-		{
-			mind = nowd;
-			for (int j = 1; j <= n; j++)
-				x[j] = nowx[j];
-		}
-		nowd -= d[t][1];
-	}
-}
