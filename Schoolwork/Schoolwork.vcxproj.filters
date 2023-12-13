@@ -30,6 +30,12 @@
     <ClCompile Include="Dynamic Planning.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ttraceback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Function Definition.h">
