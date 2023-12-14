@@ -7,7 +7,7 @@
 
 //Õ»
 
-void Starck_increase(int arr[], int arr_len)
+void Starck_increase(int arr[], int arr_len)//µ¥µ÷µÝÔöÕ»
 {
 	int* stack = NULL;
 	stack = (int*)malloc(arr_len * sizeof(int));
@@ -16,7 +16,7 @@ void Starck_increase(int arr[], int arr_len)
 		perror("malloc");
 		exit(-1);
 	}
-	memset(stack, 0, sizeof(int));
+	memset(stack, 0, sizeof(stack));
 	int pos = -1;
 	int i = 0;
 	do

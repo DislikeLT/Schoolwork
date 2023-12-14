@@ -2,11 +2,23 @@
 
 //函数定义
 
-typedef struct
+typedef struct//背包问题
 {
 	int weight;
 	int value;
 }Items;
+
+typedef struct SElemType//顺序栈
+{
+	int data[100];
+	int top;
+
+}SqStack;
+
+typedef struct StructNode
+{
+
+};
 
 
 extern void test01();
