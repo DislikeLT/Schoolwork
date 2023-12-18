@@ -8,14 +8,14 @@ typedef struct//背包问题
 	int value;
 }Items;
 
-typedef struct SElemType//顺序栈
+typedef struct SqStack//顺序栈
 {
-	int data[100];
-	int top;
-
+	int* base;		//
+	int* top;		//
+	int StackSize;	//
 }SqStack;
 
-typedef struct StructNode
+typedef struct StructNode//链栈
 {
 
 };
@@ -30,15 +30,14 @@ extern void test06();
 extern void test07();
 extern void test08();
 extern void test09();
+extern void test10();
+extern void test11();
+extern void test12();
 
-extern int Search(int arr[], int L, int R, int target);
+extern int Search(int arr[], int L, int R, int target);//二分查找
 
-extern bool Judge(int num);
+extern int fcc(int num);//斐波那契数列
 
-extern void Reversal(char* arr, int L, int len);
+extern void QuickSort(int *arr,int left,int right);//快速排序
 
-extern void Merng(int* arr, int left, int right);
-
-extern void QuickSort(int *arr,int left,int right);
-
-extern void Starck_increase(int arr[], int arr_len);
+extern void Merge(int* arr, int left, int right);//归并排序

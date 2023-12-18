@@ -4,45 +4,94 @@
 #include <stdlib.h>
 #include<string.h>
 #include<math.h>
+#include "Function Definition.h"
 
 //栈
 
-void Starck_increase(int arr[], int arr_len)//单调递增栈
+#define New_StackSize 5
+
+void CreatStack(SqStack* S)//构造空栈
 {
-	int* stack = NULL;
-	stack = (int*)malloc(arr_len * sizeof(int));
-	if (!stack)
+	S->base = (int*)malloc(10 * sizeof(int));
+	if (!S->base)
 	{
 		perror("malloc");
 		exit(-1);
 	}
-	memset(stack, 0, sizeof(stack));
-	int pos = -1;
-	int i = 0;
-	do
+	S->top = S->base;
+	S->StackSize = 10;
+}
+
+int StackLength(SqStack S)//栈长度
+{
+	return S.top - S.base;
+}
+
+void ClearStack(SqStack* S)//清空栈
+{
+	S->top = S->base;
+}
+
+
+void DeleteStack(SqStack* S)//销毁栈
+{
+	free(S->base);
+	S->base = NULL;
+	S->top = NULL;
+	S->StackSize = 0;
+}
+
+void PushStack(SqStack* S, int num)//入栈
+{
+	if (S->top - S->base >= S->StackSize)//栈满
 	{
-		if (pos == -1)
-			stack[pos++] = arr[i++];
-		else
+		S->base = (int*)realloc(S->base, (S->StackSize + New_StackSize) * sizeof(int));
+		if (!S->base)
 		{
-			int j = pos;
-			while (stack[j] < arr[i])
-			{
-				stack[j] = arr[i];
-				pos--;
-			}
-			j = pos;
+			perror("realloc");
+			exit(-1);
 		}
-	} while (pos);
-	for (int i = 0; i < pos; i++)
-	{
-		printf("%d ", stack[i]);
+		S->top = S->base + S->StackSize;
+		S->StackSize += New_StackSize;
 	}
+	*(S->top)++ = num;
+}
+
+void PopStack(SqStack* S,int *e)//出栈
+{
+	if (S->top == S->base)
+	{
+		printf("栈为空，无法删除\n");
+		return;
+	}
+	*e = *--S->top;//返回栈顶元素
+	return;
+
+}
+
+
+void StackTraverse(SqStack S, void(*visit)(int))
+{
+	while (S.top > S.base)
+		visit(*S.base++);
+	printf("\n");
 }
 
 void test08()
 {
-	int arr[] = { 10,3,7,4,12 };
-	int arr_len = sizeof(arr) / sizeof(arr[0]);
-	Starck_increase(arr, arr_len);
+	SqStack S;
+	CreatStack(&S);
+
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	PushStack(&S, a);
+	PushStack(&S, b);
+	PushStack(&S, c);
+
+
+	int e;
+	PopStack(&S, &e);
+	printf("%d", e);
 }
+

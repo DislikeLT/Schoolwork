@@ -9,5 +9,5 @@
 
 int main()
 {
-	test09();
+	test12();
 }
